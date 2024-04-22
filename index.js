@@ -38,6 +38,7 @@ client.on(Events.InteractionCreate, async interaction => {
 	} else if (commandName === 'user-info') {
 		interaction.reply('Your username: ' + interaction.user.username + '\nYour ID: ' + interaction.user.id);
 	} else if (commandName === 'stock'){
-		interaction.reply(await getCurrentPrice('TSLA'))
+		console.log(interaction);
+		interaction.reply(await getCurrentPrice(interaction.author.message));
 	}
 });
