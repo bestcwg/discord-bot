@@ -17,9 +17,9 @@ client.login(process.env.DISCORD_TOKEN);
 client.on("messageCreate", async (message) =>{
 	console.log(message);
 	if (!message?.author.bot) {
-        //message.author.send(`Echo ${message.content}`);
-		const channel = await client.channels.fetch('1160992319424700578');
-		channel.send({content: "Test"});
+        message.author.send(`Hey`);
+		//const channel = await client.channels.fetch('1160992319424700578');
+		//channel.send({content: "Test"});
     }	
 });
 
