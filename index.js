@@ -29,7 +29,7 @@ client.on(Events.InteractionCreate, interaction => {
 	const { commandName } = interaction;
 
 	if (commandName === 'ping') {
-		interaction.reply('Pong.');
+		interaction.reply('Jake er gay.');
 	} else if (commandName === 'beep') {
 		interaction.reply('Boop.');
 	} else if (commandName === 'server') {
