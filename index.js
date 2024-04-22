@@ -29,9 +29,6 @@ client.on(Events.InteractionCreate, interaction => {
 	const { commandName } = interaction;
 
 	if (commandName === 'ping') {
-		if (interaction.author.username === "GMM Jake".toLowerCase()) {
-			interaction.reply('Jake er gay');
-		} 
 		interaction.reply('pong');
 	} else if (commandName === 'beep') {
 		interaction.reply('Boop.');
