@@ -19,6 +19,4 @@ client.on("messageCreate", async (message) =>{
 	if (!message?.author.bot) {
         	message.author.send(`Echo ${message.content}`);
         }
-	const channel = client.channels.cache.get('test');
-	channel.send({content: 'Testing'});
 });
