@@ -7,7 +7,7 @@ headers: {
 });
     const value = await response.json();
 
-    return value.chart.result[0].meta.regularMarketPrice;
+    return String(value.chart.result[0].meta.regularMarketPrice);
 }
 
 console.log(await getCurrentPrice('TSLA'));
