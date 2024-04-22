@@ -37,7 +37,7 @@ client.on(Events.InteractionCreate, async interaction => {
 		interaction.reply('Guild name: ' + interaction.guild.name + '\nTotal members: ' + interaction.guild.memberCount);
 	} else if (commandName === 'user-info') {
 		interaction.reply('Your username: ' + interaction.user.username + '\nYour ID: ' + interaction.user.id);
-	} else if (commandName === 'get-stock'){
+	} else if (commandName === 'stock'){
 		interaction.reply(await getCurrentPrice('TSLA'))
 	}
 });
