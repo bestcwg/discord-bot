@@ -39,6 +39,6 @@ client.on(Events.InteractionCreate, async interaction => {
 		interaction.reply('Your username: ' + interaction.user.username + '\nYour ID: ' + interaction.user.id);
 	} else if (commandName === 'stock'){
 		console.log(interaction);
-		interaction.reply(await getCurrentPrice(interaction.author.message));
+		interaction.reply(await getCurrentPrice(interaction.options.getString('input')));
 	}
 });
