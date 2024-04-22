@@ -38,7 +38,7 @@ client.on(Events.InteractionCreate, async interaction => {
 	} else if (commandName === 'user-info') {
 		interaction.reply('Your username: ' + interaction.user.username + '\nYour ID: ' + interaction.user.id);
 	} else if (commandName === 'stock'){
-		console.log(interaction);
-		interaction.reply(await getCurrentPrice(interaction.options.getString('input')));
+		const companyTag = interaction.options.getString('input'); 
+		interaction.reply(`Company tag: ${companyTag}, price is ${await getCurrentPrice(companyTag)}`);
 	}
 });
