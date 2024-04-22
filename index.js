@@ -1,7 +1,8 @@
 import dotenv from 'dotenv'
-dotenv.config()
-
 import {Client, GatewayIntentBits, Events} from 'discord.js'
+import getCurrentPrice from './yahoo-finance-api.js' 
+
+dotenv.config();
 
 const client = new Client({
 	intents: [
@@ -36,5 +37,7 @@ client.on(Events.InteractionCreate, interaction => {
 		interaction.reply('Guild name: ' + interaction.guild.name + '\nTotal members: ' + interaction.guild.memberCount);
 	} else if (commandName === 'user-info') {
 		interaction.reply('Your username: ' + interaction.user.username + '\nYour ID: ' + interaction.user.id);
+	} else if (commandName === 'stock'){
+		interaction.reply(getCurrentPrice('TSLA'));
 	}
 });
