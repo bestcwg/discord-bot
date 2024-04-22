@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 dotenv.config()
 
-import {Client, GatewayIntentBits} from 'discord.js'
+import {Client, GatewayIntentBits, Events} from 'discord.js'
 
 const client = new Client({
 	intents: [
@@ -17,9 +17,24 @@ client.login(process.env.DISCORD_TOKEN);
 client.on("messageCreate", async (message) =>{
 	console.log(message);
 	if (!message?.author.bot) {
-        message.author.send(`Echo ${message.content}`);
-    }
+        //message.author.send(`Echo ${message.content}`);
+		const channel = await client.channels.fetch('1160992319424700578');
+		channel.send({content: "Test"});
+    }	
+});
 
-	const channel = await client.channels.fetch('1231691288114499765');
-	channel.send({content: "Test"});
+client.on(Events.InteractionCreate, interaction => {
+	if (!interaction.isChatInputCommand()) return;
+
+	const { commandName } = interaction;
+
+	if (commandName === 'ping') {
+		interaction.reply('Pong.');
+	} else if (commandName === 'beep') {
+		interaction.reply('Boop.');
+	} else if (commandName === 'server') {
+		interaction.reply('Guild name: ' + interaction.guild.name + '\nTotal members: ' + interaction.guild.memberCount);
+	} else if (commandName === 'user-info') {
+		interaction.reply('Your username: ' + interaction.user.username + '\nYour ID: ' + interaction.user.id);
+	}
 });
