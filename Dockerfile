@@ -1,0 +1,3 @@
+FROM node:20
+
+EXPOSE 8888

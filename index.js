@@ -24,6 +24,7 @@ client.login(process.env.DISCORD_TOKEN);
     }	
 });*/
 
+
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
