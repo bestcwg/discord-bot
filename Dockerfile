@@ -1,3 +1,3 @@
-FROM node:20
+FROM alpine:2024329
 
 EXPOSE 8888
