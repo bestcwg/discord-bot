@@ -1,3 +1,11 @@
-FROM alpine:2024329
+FROM node:alpine
+
+WORKDIR /app
+COPY package.json ./
+RUN npm install
+
+COPY ./ ./
+
+CMD ["npm", "start"]
 
 EXPOSE 8888
